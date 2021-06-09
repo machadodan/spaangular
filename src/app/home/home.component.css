@@ -1,0 +1,30 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  font-size-adjust: initial;
+  background-color: steelblue;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+button {
+  font-family: 'Arial Narrow Bold', sans-serif;
+  border-collapse: collapse;
+  font-size-adjust: initial;
+  color: cadetblue;
+
+
+}

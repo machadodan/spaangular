@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SPA com Angular</title>
+</head>
+
+<body>
+
+  <mat-toolbar>
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>Lista 1</button>
+      <button mat-menu-item>Lista 2</button>
+    </mat-menu>
+
+    <span> Minha Primeira SPA</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>share</mat-icon>
+    </button>
+  </mat-toolbar>
+
+  <div>
+
+    <button (click)="mudarValor()">Mudar Valor</button>
+    <button (click)="reiniciarValor()">Reiniciar Valor</button>
+    <button (click)="exibirAlunos()">Exibir Alunos</button>
+    <button (click)="exibirProfessores()">Exibir Professores</button>
+
+    <spa-alunos [valorInicial]="valor"></spa-alunos>
+
+  </div>
+     <br>
+<div>
+  <table *ngIf="exibeAlunos">
+    <tr>
+      <th>Nome</th>
+      <th>Idade</th>
+      <th>E-mail</th>
+      <th>Curso</th>
+    </tr>
+    <tr *ngFor="let aluno of listaAlunos">
+      <td>{{aluno.nome}}</td>
+      <td>{{aluno.idade}}</td>
+      <td>{{aluno.email}}</td>
+      <td>{{aluno.curso}}</td>
+    </tr>
+  </table>
+</div>
+
+<div>
+  <spa-professores [valorInicial]="valor"></spa-professores>
+
+  <table *ngIf="exibeProfessores">
+    <tr>
+      <th>Nome</th>
+      <th>disciplina</th>
+      <th>Curso</th>
+      <th>turno</th>
+    </tr>
+    <tr *ngFor="let professor of listaProfessores">
+      <td>{{professor.nome}}</td>
+      <td>{{professor.disciplina}}</td>
+      <td>{{professor.curso}}</td>
+      <td>{{professor.turno}}</td>
+    </tr>
+  </table>
+  </div>
+</body>
+</html>
